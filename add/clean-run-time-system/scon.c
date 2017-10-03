@@ -854,7 +854,7 @@ void create_profile_file_name (unsigned char *profile_file_name_string)
 int execution_aborted;
 int return_code;
 
-int main (int argc,char **argv)
+int start_run_time_system (int argc,char **argv)
 {
 	int arg_n;
 
