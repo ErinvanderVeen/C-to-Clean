@@ -1,3 +1,20 @@
+### Clean ###
+# Binaries
+*.exe
+*.out
+
+# Project files
+*.prj
+
+# Directory used to store object files, abc files and assembly files
+Clean System Files/
+*linux64/
+
+# iTasks environment extra data
+*-data/
+*-www/
+*-sapl/
+
 # Prerequisites
 *.d
 
