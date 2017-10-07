@@ -367,7 +367,7 @@ __start_address	dq 0
 _DATA	ends
 	_TEXT segment
 
-;	public	abc_main
+	;public	abc_main
 	public	print
 	public	print_char
 	public	print_int
@@ -641,9 +641,8 @@ _DATA	ends
 ;  else
 ;	call	__start
 ;  endif
-;
+
 exit_:
-; else
  ifndef LINUX
 	call	_start
 
