@@ -943,7 +943,7 @@ int start_run_time_system (int argc,char **argv)
 	global_argv=&argv[arg_n];
 	global_argc=argc-arg_n;
 
-	abc_main();
+	//abc_main();
 
 	if (return_code==0 && execution_aborted!=0)
 		return_code= -1;

@@ -367,7 +367,7 @@ __start_address	dq 0
 _DATA	ends
 	_TEXT segment
 
-	public	abc_main
+;	public	abc_main
 	public	print
 	public	print_char
 	public	print_int
@@ -602,48 +602,49 @@ _DATA	ends
 ;	public	free_finalizer_list
 	comm	free_finalizer_list:qword
 
-abc_main:
-	push	rbx
-	push	rbp 
-	push	rsi 
-	push	rdi 
- ifndef LINUX
-	db	49h
-	push	rsp
-	db	49h
-	push	rbp
-	db	49h
-	push	rsi
-	db	49h
-	push	rdi
- else
-	push	r12
-	push	r13
-	push	r14
-	push	r15
- endif
-
-	call	init_clean
-	test	rax,rax
-	jne	init_error
-
-	call	init_timer
-
-	mov	halt_sp+0,rsp
-
- ifdef PROFILE
-	call	init_profiler
- endif
-
- ifdef LINUX
-  ifdef PIC
-	call	qword ptr [__start_address[rip]]
-  else
-	call	__start
-  endif
-
+;abc_main:
+;	push	rbx
+;	push	rbp 
+;	push	rsi 
+;	push	rdi 
+; ifndef LINUX
+;	db	49h
+;	push	rsp
+;	db	49h
+;	push	rbp
+;	db	49h
+;	push	rsi
+;	db	49h
+;	push	rdi
+; else
+;	push	r12
+;	push	r13
+;	push	r14
+;	push	r15
+; endif
+;
+;	call	init_clean
+;	test	rax,rax
+;	jne	init_error
+;
+;	call	init_timer
+;
+;	mov	halt_sp+0,rsp
+;
+; ifdef PROFILE
+;	call	init_profiler
+; endif
+;
+; ifdef LINUX
+;  ifdef PIC
+;	call	qword ptr [__start_address[rip]]
+;  else
+;	call	__start
+;  endif
+;
 exit_:
- else
+; else
+ ifndef LINUX
 	call	_start
 
 exit:
